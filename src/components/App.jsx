@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import MainContainer from './mainContainer.jsx';
 
 class App extends Component {
   constructor(props) {
@@ -26,6 +27,7 @@ class App extends Component {
         return (
             <div>
                 <h1>Hello World! This is Sarah! My Plants: {this.state.plants} </h1>
+                <MainContainer />
             </div>
         )
     }
