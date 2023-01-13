@@ -5,13 +5,13 @@ h1 {
     color: blue;
 }
 
-.main-container {
+.mainpage--container {
     width: 100vw;
     height: 500px;
     background-color: aquamarine;
 }
 
-.garden-container {
+.garden--container {
     width: 50vw;
     height: 100px;
     background-color: rgb(244, 255, 127);
