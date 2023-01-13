@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import MainPage from './MainPage/MainPage.jsx';
 
 function App() {
