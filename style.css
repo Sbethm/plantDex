@@ -1,5 +1,8 @@
-/* MongoDB server uri */
-/* mongodb+srv://Smoose:<password>@cluster0.z8aried.mongodb.net/?retryWrites=true&w=majority */
+/*remove default styling*/
+* {
+    margin: 0;
+    padding: 0;
+}
 
 h1 {
     color: blue;
@@ -7,8 +10,7 @@ h1 {
 
 .mainpage--container {
     width: 100vw;
-    height: 500px;
-    background-color: aquamarine;
+    background-color: rgb(246, 244, 241);
 }
 
 .garden--container {
