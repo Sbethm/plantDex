@@ -4,23 +4,23 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 
 function PlantCard(props) {
-
+  //create a function that displays the watering icon for the plants water level
+    //props.water
+      // values can be twice a week, once a week, once every two weeks
 
   return (
       <article className='plantCard--container'>
           <div className='plantCard--header'>
-            <h3>{ props.nickName }</h3>
+            <div className='title-water'>
+              <h3>{ props.nickName }</h3>
+              <FontAwesomeIcon className='plantCard--image' icon="droplet" />
+            </div>
             <p className='plant--detail'>{ props.birthday }</p>
           </div>
-          <ul>
-            
+          <div className='plantCard--details'>          
+            <FontAwesomeIcon className='plantCard--image' icon="seedling" />
             <p className='plant--detail'><span>Type:</span> { props.plantName }</p>
-            <p className='plant--detail'><span>Water:</span> { props.water }</p>
-            <FontAwesomeIcon icon="seedling" />
-            {/* <li className='plant-detail'>Sunlight:{ props.water }</li> */}
-            
-            {/* <li className='plant-detail'>Notes:</li> */}
-          </ul>
+          </div>
       </article>
   )
 
