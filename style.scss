@@ -1,0 +1,43 @@
+/*remove default styling*/
+* {
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    list-style: none;
+}
+
+.mainpage--container {
+    width: 100vw;
+    background-color: rgb(246, 244, 241);
+}
+
+.garden--container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.plantCard--container {
+    height: 9rem;
+    width: 9rem;
+    margin: 10px;
+    padding: 2px;
+    border-radius: 20px;
+    border: solid 4px rgb(109, 179, 117);
+    background-color: rgb(254, 254, 254);
+    box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.36);
+
+    .plantCard--header {
+        margin: 10px;
+
+        h3 {
+            color: rgb(68, 68, 68);
+        }
+
+        p {
+            color: grey;
+        }
+    }
+}
