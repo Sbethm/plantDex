@@ -1,19 +1,23 @@
 import React from 'react';
 
+
+
 function PlantCard(props) {
 
 
   return (
-      <article>
-          <div className='plant-nickname-container'>
-            <h3>Your Plants Nickname</h3>
+      <article className='plantCard--container'>
+          <div className='plantCard--header'>
+            <h3>{ props.nickName }</h3>
+            <p className='plant--detail'>{ props.birthday }</p>
           </div>
           <ul>
-            <li className='plant-detail'>Name:{ props.nickName }</li>
-            <li className='plant-detail'>Water Schedule:{ props.plantName }</li>
-            <li className='plant-detail'>Sunlight:{ props.water }</li>
-            <li className='plant-detail'>Collected Day:{ props.birthday }</li>
-            <li className='plant-detail'>Notes:</li>
+            
+            <p className='plant--detail'><span>Type:</span> { props.plantName }</p>
+            <p className='plant--detail'><span>Water:</span> { props.water }</p>
+            {/* <li className='plant-detail'>Sunlight:{ props.water }</li> */}
+            
+            {/* <li className='plant-detail'>Notes:</li> */}
           </ul>
       </article>
   )
