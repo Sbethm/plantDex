@@ -8,6 +8,23 @@ li {
     list-style: none;
 }
 
+.header--container {
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    background-color: rgb(67, 162, 109);
+
+    .light {
+        color: white;
+    }
+
+    .title {
+        padding-left: 5px;
+        font-size: 2rem;
+        color: rgb(255, 255, 255);
+    }
+}
+
 .mainpage--container {
     width: 100vw;
     background-color: rgb(246, 244, 241);
