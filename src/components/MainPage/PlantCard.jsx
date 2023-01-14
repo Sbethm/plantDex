@@ -2,7 +2,6 @@ import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 
-
 function PlantCard(props) {
   //create a function that displays the watering icon for the plants water level
     //props.water
