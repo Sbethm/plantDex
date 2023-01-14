@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Dashboard from './Dashboard.jsx';
 
 export default function Header() {
+
   return (
     <header>
         <div className='header--container'>

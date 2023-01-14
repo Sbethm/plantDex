@@ -99,3 +99,12 @@ header {
 
     }
 }
+
+.newPlant--container {
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(216, 117, 117, 0.529);
+}
