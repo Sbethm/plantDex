@@ -1,4 +1,5 @@
 import React from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 
 
@@ -15,6 +16,7 @@ function PlantCard(props) {
             
             <p className='plant--detail'><span>Type:</span> { props.plantName }</p>
             <p className='plant--detail'><span>Water:</span> { props.water }</p>
+            <FontAwesomeIcon icon="seedling" />
             {/* <li className='plant-detail'>Sunlight:{ props.water }</li> */}
             
             {/* <li className='plant-detail'>Notes:</li> */}
