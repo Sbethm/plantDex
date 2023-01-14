@@ -37,7 +37,7 @@ li {
 }
 
 .plantCard--container {
-    height: 9rem;
+
     width: 9rem;
     margin: 10px;
     padding: 2px;
@@ -49,12 +49,37 @@ li {
     .plantCard--header {
         margin: 10px;
 
-        h3 {
-            color: rgb(68, 68, 68);
+        .title-water {
+          display: flex;
+          justify-content: space-between;
+          color:rgb(68, 68, 68);
         }
-
+        
         p {
             color: grey;
         }
+    }
+
+    .plantCard--details {
+        
+        .plantCard--image {
+            margin: 5px 0;
+            height: 7rem;
+            width: 100%;
+            color: rgb(138, 135, 125);
+            background-color: rgb(162, 221, 184);
+        }
+
+        p {
+            margin: 0 10px 10px 10px;
+            color:grey;
+
+            span {
+                font-weight: 800;
+                color: rgb(68, 68, 68);
+            }
+        }
+        
+
     }
 }
