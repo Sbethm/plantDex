@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import GardenContainer from './GardenContainer.jsx';
 
 function MainPage() {
