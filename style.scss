@@ -8,11 +8,14 @@ li {
     list-style: none;
 }
 
-.header--container {
+header {
     padding: 10px;
+    background-color: rgb(67, 162, 109);
+}
+
+.header--container {
     display: flex;
     align-items: center;
-    background-color: rgb(67, 162, 109);
 
     .light {
         color: white;
@@ -22,6 +25,20 @@ li {
         padding-left: 5px;
         font-size: 2rem;
         color: rgb(255, 255, 255);
+    }
+}
+
+.dashboard--container {
+    margin: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+
+    button {
+        padding: 0.5rem 1rem;
+        color: green;
+        border-radius: 20px;
+        border: solid 4px rgb(254, 180, 10);
+        background-color: rgb(254, 247, 103);
     }
 }
 
@@ -37,7 +54,6 @@ li {
 }
 
 .plantCard--container {
-
     width: 9rem;
     margin: 10px;
     padding: 2px;
