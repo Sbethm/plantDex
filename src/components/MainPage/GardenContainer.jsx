@@ -38,7 +38,6 @@ function GardenContainer() {
 
       const displayPlants = plants && plants.map((plant, i) => {
         return (
-          <>
              <PlantCard 
             key={ `${i}PlantCard` }
             nickName={ plant.nickName} 
@@ -49,16 +48,13 @@ function GardenContainer() {
             // setShowModal={ openModal }
             // selectPlant={ selectedPlantInfo }
            />
-           { showModal ? <PlantModal setShowModal={ openModal } plantInfo={ selectPlant } /> : null }
-          </>
         )
       });
-    
-    
 
     return (
         <div className='garden--container'>
             { displayPlants }
+            { showModal ? <PlantModal setShowModal={ openModal } plantInfo={ selectPlant } /> : null }
         </div>
     )
 

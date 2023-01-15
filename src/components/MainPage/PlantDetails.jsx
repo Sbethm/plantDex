@@ -3,8 +3,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 export default function PlantDetails(props) {
     return (
-        <div>
-            <article className='plantCard--container' onClick={ props.handleEvent } >
+        <>
+            <article className='modal--container' onClick={ props.handleEvent } >
                 <div className='plantCard--header'>
                     <div className='title-water'>
                     <h3>{ props.plantInfo.nickname }</h3>
@@ -17,8 +17,10 @@ export default function PlantDetails(props) {
                     <p className='plant--detail'><span>Type:</span> { props.plantInfo.type }</p>
                 </div>
             </article>
-            <button>Update</button>
-            <button>Delete</button>
-        </div>
+            <div className='plantCard-btn--container'>
+                <button className='secondary--btn' onClick={ props.update }>Update</button>
+                <button className='alert--btn'>Delete</button>
+            </div>
+        </>
     )
 }

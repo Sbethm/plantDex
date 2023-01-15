@@ -11,8 +11,8 @@ export default function Dashboard() {
 
     return (
         <div className="dashboard--container">
-            <button className='addPlant--btn' onClick={ setShowModal }>New Plant</button>
-            <button className='filter-btn'>
+            <button className='primary--btn' onClick={ setShowModal }>New Plant</button>
+            <button className='filter-btn primary--btn'>
                 <FontAwesomeIcon className='plantCard--image' icon="sort" />
                 Filter
             </button>

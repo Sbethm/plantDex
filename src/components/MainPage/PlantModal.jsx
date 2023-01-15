@@ -8,12 +8,16 @@ export default function PlantModal(props) {
     const [ updateForm, setUpdateForm ] = useState(false);
 
     const { plantInfo } = props;
-    console.log(plantInfo)
+    
+    const updateModal = () => {
+        console.log(updateForm)
+        updateForm ? setUpdateForm(false) : setUpdateForm(true);
+    }
 
     return (
-        <div className='spot'>
-            <button onClick={ props.setShowModal }>X</button>
-            { updateForm ? <UpdateForm plantInfo={ plantInfo } /> : <PlantDetails plantInfo={ plantInfo } />}
+        <div className='plant--modal'>
+            <button className='primary--btn closeModal--btn' onClick={ props.setShowModal }>X</button>
+            { updateForm ? <UpdateForm plantInfo={ plantInfo } /> : <PlantDetails plantInfo={ plantInfo } update={ updateModal } />}
         </div>
     )
 }
