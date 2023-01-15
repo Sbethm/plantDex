@@ -38,7 +38,7 @@ export default function NewPlant(props) {
     }
 
     return (
-        <div className='newPlant--container'>
+        <div className='newPlant--container plant--modal'>
             <button onClick={ props.setShowModal }>X</button>
             <form action="" onSubmit={ onSubmit }>
                 <div className='plantCard--header'>

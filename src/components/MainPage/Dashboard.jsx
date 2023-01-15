@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import NewPlant from './NewPlant.jsx';
+import NewPlant from './NewPlantModal.jsx';
 
 export default function Dashboard() {
     const [showModal, setShowModal ] = useState(false);

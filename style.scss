@@ -29,7 +29,7 @@ header {
 }
 
 .dashboard--container {
-    margin: 1rem 2rem;
+    margin: 2rem 2rem 0.5rem 2rem;
     display: flex;
     justify-content: space-between;
 
@@ -100,7 +100,7 @@ header {
     }
 }
 
-.newPlant--container {
+.plant--modal {
     position: fixed;
     left: 0;
     top: 0;
@@ -153,8 +153,16 @@ header {
                     color: rgb(68, 68, 68);
                 }
             }
-            
-    
         }
     }
+}
+
+/* -------------EXPERIMENT------------- */
+.spot {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 255, 255, 0.079);
 }
