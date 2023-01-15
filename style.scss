@@ -106,5 +106,55 @@ header {
     top: 0;
     height: 100%;
     width: 100%;
-    background-color: rgba(216, 117, 117, 0.529);
+    background-color: rgba(207, 207, 207, 0.529);
+
+    form {
+        margin: 0 auto;
+        height: 20rem;
+        width: 15rem;
+        margin: 10px;
+        padding: 2px;
+        border-radius: 20px;
+        border: solid 4px rgb(109, 179, 117);
+        background-color: rgb(254, 254, 254);
+        box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.36);
+
+        .plantCard--header {
+            margin: 10px;
+    
+            .nickname-water--input {
+              display: flex;
+              flex-direction: column;
+              justify-content: space-between;
+              color:rgb(68, 68, 68);
+            }
+            
+            p {
+                color: grey;
+            }
+        }
+    
+        .plantCard--details {
+            
+            .plantCard--image {
+                margin: 5px 0;
+                height: 7rem;
+                width: 100%;
+                color: rgb(138, 135, 125);
+                background-color: rgb(162, 221, 184);
+            }
+    
+            p {
+                margin: 0 10px 10px 10px;
+                color:grey;
+    
+                span {
+                    font-weight: 800;
+                    color: rgb(68, 68, 68);
+                }
+            }
+            
+    
+        }
+    }
 }
