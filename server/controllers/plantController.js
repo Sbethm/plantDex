@@ -18,17 +18,17 @@ plantController.addPlant = (req, res, next) => {
     console.log(req.body)
   const { nickname,
     water,
-    birthday,
+    adoptday,
     type      } = req.body;
-  // models.Plant.create({ nickname,
-  //   water,
-  //   birthday,
-  //   type      })
-  //   .then((plant) => {
-  //       res.locals.plant = plant;
-  //       return next();
-  //   })
-  //   .catch((err) => console.log("error at addPlant middleware:", err));
+  models.Plant.create({ nickname,
+    water,
+    adoptday,
+    type      })
+    .then((plant) => {
+        res.locals.plant = plant;
+        return next();
+    })
+    .catch((err) => console.log("error at addPlant middleware:", err));
   
 }
 

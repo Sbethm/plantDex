@@ -40,10 +40,10 @@ function GardenContainer() {
         return (
              <PlantCard 
             key={ `${i}PlantCard` }
-            nickName={ plant.nickName} 
-            plantName={ plant.plantName } 
+            nickName={ plant.nickname} 
+            type={ plant.type } 
             water={ plant.water } 
-            birthday={ plant.birthday } 
+            adoptday={ plant.adoptday } 
             handleEvent={ handleEvent }
             // setShowModal={ openModal }
             // selectPlant={ selectedPlantInfo }
