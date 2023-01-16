@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 export default function NewPlant(props) {
     const [ newPlant, setNewPlant ] = useState({
         nickname: '',
-        water: '',
+        water: 'dry',
         adoptday: '',
         type: ''
     });
@@ -20,10 +20,12 @@ export default function NewPlant(props) {
 
     const onSubmit = (event) => {
         event.preventDefault();
-        console.log("THIS IS YOUR EVENT", event);
-        console.log("THIS IS YOUR NICKNAME", newPlant);
+        
+        const emptyInput = Object.values(newPlant).indexOf('');
+        console.log(emptyInput)
 
-        fetch('/plant', {
+        if(emptyInput === -1) {
+            fetch('/plant', {
             method: 'post',
             headers: {'Content-Type':'application/json'},
             body: JSON.stringify({
@@ -31,10 +33,20 @@ export default function NewPlant(props) {
                 water: newPlant.water,
                 adoptday: newPlant.adoptday,
                 type: newPlant.type            
+                })
             })
-        }).catch(err => {
-            console.log("YOUR POST WAS NOT SUCCESSFUL", err);
-        })
+            .catch(err => { 
+                console.log("YOUR POST WAS NOT SUCCESSFUL", err);
+            })
+            //close the NewPlantModal after successful POST request
+            props.setShowModal();
+        } else {
+            window.alert("Please fill in every box.")
+        }
+
+        
+
+        
     }
 
     return (
@@ -62,13 +74,13 @@ export default function NewPlant(props) {
                               id="water-values"
                             >
                                 <option value="dry">
-                                    Dry
+                                    dry
                                 </option>
-                                <option value="Moist">
-                                    Moist
+                                <option value="moist">
+                                    moist
                                 </option>
-                                <option value="Wet">
-                                    Wet
+                                <option value="wet">
+                                    wet
                                 </option>
                             </select>
                         </label>

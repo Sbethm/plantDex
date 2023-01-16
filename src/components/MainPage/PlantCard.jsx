@@ -20,11 +20,11 @@ function PlantCard(props) {
               <h3>{ props.nickName }</h3>
               <FontAwesomeIcon className='plantCard--image' icon="droplet" />
             </div>
-            <p className='plant--detail'>{ props.birthday }</p>
+            <p className='plant--detail'>{ props.adoptday }</p>
           </div>
           <div className='plantCard--details'>          
             <FontAwesomeIcon className='plantCard--image' icon="seedling" />
-            <p className='plant--detail'><span>Type:</span> { props.plantName }</p>
+            <p className='plant--detail'><span>Type:</span> { props.type }</p>
           </div>
       </article>
   )

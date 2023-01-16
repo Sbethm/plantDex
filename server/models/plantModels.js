@@ -13,11 +13,10 @@ mongoose.connect(process.env.MONGO_URI, {
 const Schema = mongoose.Schema;
 
 const plantSchema = new Schema ({
-    plantName: { type: String, required: true},
-    // plant_Name: { type: String, required: true},
-    // plant_Name: { type: String, required: true},
-    // plant_Name: { type: String, required: true},
-    // plant_Name: { type: String, required: true},
+    nickname: { type: String, required: true},
+    water: { type: String, required: true},
+    adoptday: { type: String, required: true},
+    type: { type: String, required: true}
 })
 
 const Plant = mongoose.model('plant', plantSchema);
