@@ -1,4 +1,5 @@
 import React from 'react';
+import WaterIcon from './WaterIcon.jsx';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 
@@ -18,7 +19,7 @@ function PlantCard(props) {
           <div className='plantCard--header'>
             <div className='title-water'>
               <h3>{ props.nickName }</h3>
-              <FontAwesomeIcon className='plantCard--image' icon="droplet" />
+              <WaterIcon waterValue={ props.water } />
             </div>
             <p className='plant--detail'>{ props.adoptday }</p>
           </div>
