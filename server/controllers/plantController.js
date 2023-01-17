@@ -32,6 +32,19 @@ plantController.addPlant = (req, res, next) => {
   
 }
 
+plantController.deletePlant = (req, res, next) => {
+  console.log("delete!")
+  console.log(req.body)
+  const { nickname } = req.body;
+
+  models.Plant.deleteOne({
+    "nickname" : nickname
+  })
+  .then(() => {
+    return next();
+  })
+  .catch((err) => console.log("error at addPlant middleware:", err));
+}
 
 
 module.exports = plantController;
