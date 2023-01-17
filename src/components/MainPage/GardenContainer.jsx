@@ -2,8 +2,9 @@ import React, { useEffect, useState } from 'react';
 import PlantCard from './PlantCard.jsx';
 import PlantModal from './PlantModal.jsx';
 
-function GardenContainer() {
-    const [ plants, setPlants ] = useState(null);
+function GardenContainer(props) {
+    const setPlants = props.setPlants;
+    const plants = props.plants;
     const [ showModal, setShowModal ] = useState(false);
     const [ selectPlant, setSelectPlant ] = useState({
       nickname: '',

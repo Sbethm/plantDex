@@ -23,7 +23,7 @@ export default function NewPlant(props) {
         
         const emptyInput = Object.values(newPlant).indexOf('');
         console.log(emptyInput)
-
+        //check to make sure all inputs have been filled
         if(emptyInput === -1) {
             fetch('/plant', {
             method: 'post',
@@ -38,6 +38,11 @@ export default function NewPlant(props) {
             .catch(err => { 
                 console.log("YOUR POST WAS NOT SUCCESSFUL", err);
             })
+            //rerender the GardenContainer component with new plant added
+            props.setPlants([
+                ...props.plants,
+                newPlant
+            ])
             //close the NewPlantModal after successful POST request
             props.setShowModal();
         } else {
