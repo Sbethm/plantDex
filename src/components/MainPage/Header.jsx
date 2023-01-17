@@ -2,7 +2,7 @@ import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Dashboard from './Dashboard.jsx';
 
-export default function Header() {
+export default function Header(props) {
 
   return (
     <header>
@@ -10,7 +10,7 @@ export default function Header() {
             <FontAwesomeIcon className='light' icon="seedling" />
             <div className='title'>plantDex</div>
         </div>
-        <Dashboard />
+        <Dashboard setPlants={ props.setPlants } plants={ props.plants } />
     </header>
   )
 }

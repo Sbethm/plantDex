@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import NewPlant from './NewPlantModal.jsx';
 
-export default function Dashboard() {
+export default function Dashboard(props) {
     const [showModal, setShowModal ] = useState(false);
 
     const openModal  = () => {
@@ -16,7 +16,7 @@ export default function Dashboard() {
                 <FontAwesomeIcon className='plantCard--image' icon="sort" />
                 Filter
             </button>
-            { showModal ? <NewPlant setShowModal={ openModal } /> : null }
+            { showModal ? <NewPlant setShowModal={ openModal } setPlants={ props.setPlants } plants={ props.plants } /> : null }
         </div>
     )
 }

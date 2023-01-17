@@ -23,7 +23,7 @@ export default function NewPlant(props) {
         
         const emptyInput = Object.values(newPlant).indexOf('');
         console.log(emptyInput)
-
+        //check to make sure all inputs have been filled
         if(emptyInput === -1) {
             fetch('/plant', {
             method: 'post',
@@ -39,6 +39,10 @@ export default function NewPlant(props) {
                 console.log("YOUR POST WAS NOT SUCCESSFUL", err);
             })
             //close the NewPlantModal after successful POST request
+            props.setPlants([
+                ...props.plants,
+                newPlant
+            ])
             props.setShowModal();
         } else {
             window.alert("Please fill in every box.")
