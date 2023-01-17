@@ -30,7 +30,7 @@ function GardenContainer(props) {
       fetch('/plant')
       .then((data) => data.json())
       .then((plantData) => {
-        console.log('Your plants made it to the frontend!', plantData[0].plantName);
+        console.log('Your plants made it to the frontend!', plantData[0].nickname);
         setPlants(plantData);
       })
       .catch(err => console.log("Error on frontend fetching", err))
@@ -55,7 +55,13 @@ function GardenContainer(props) {
     return (
         <div className='garden--container'>
             { displayPlants }
-            { showModal ? <PlantModal setShowModal={ openModal } plantInfo={ selectPlant } /> : null }
+            { showModal ? <PlantModal 
+              setShowModal={ openModal } 
+              plantInfo={ selectPlant } 
+              setPlants={ setPlants }
+              plants={ plants }
+              /> 
+              : null }
         </div>
     )
 

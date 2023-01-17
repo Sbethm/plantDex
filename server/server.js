@@ -17,6 +17,7 @@ app.get('/plant', plantController.getPlants ,(req, res) => {
     res.status(200).json(res.locals.plants)}
     );
 app.post('/plant', plantController.addPlant ,(req, res) => res.status(200).json(res.locals.plant));
+app.delete('/plant', plantController.deletePlant ,(req, res) => res.status(200).json(res.locals.plant));
 
 //catch all
 app.use('*', (req, res) => res.status(404).send('The page you requested does not exist'));

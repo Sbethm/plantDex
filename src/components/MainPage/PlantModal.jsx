@@ -5,6 +5,9 @@ import PlantDetails from './PlantDetails.jsx';
 
 
 export default function PlantModal(props) {
+    const setPlants = props.setPlants;
+    const plants = props.plants;
+    const closeModal = props.setShowModal;
     const [ updateForm, setUpdateForm ] = useState(false);
 
     const { plantInfo } = props;
@@ -16,8 +19,19 @@ export default function PlantModal(props) {
 
     return (
         <div className='plant--modal'>
-            <button className='primary--btn closeModal--btn' onClick={ props.setShowModal }>X</button>
-            { updateForm ? <UpdateForm plantInfo={ plantInfo } /> : <PlantDetails plantInfo={ plantInfo } update={ updateModal } />}
+            <button className='primary--btn closeModal--btn' onClick={ closeModal }>X</button>
+            { updateForm ? <UpdateForm 
+                plantInfo={ plantInfo }
+                update={ updateModal } 
+                setPlants={ setPlants }
+                plants={ plants } 
+            /> : <PlantDetails 
+                plantInfo={ plantInfo } 
+                update={ updateModal } 
+                setPlants={ setPlants }
+                plants={ plants } 
+                closeModal={ closeModal }
+            />}
         </div>
     )
 }
