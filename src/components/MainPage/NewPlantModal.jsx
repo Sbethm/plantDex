@@ -38,11 +38,12 @@ export default function NewPlant(props) {
             .catch(err => { 
                 console.log("YOUR POST WAS NOT SUCCESSFUL", err);
             })
-            //close the NewPlantModal after successful POST request
+            //rerender the GardenContainer component with new plant added
             props.setPlants([
                 ...props.plants,
                 newPlant
             ])
+            //close the NewPlantModal after successful POST request
             props.setShowModal();
         } else {
             window.alert("Please fill in every box.")
