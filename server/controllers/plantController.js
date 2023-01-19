@@ -14,8 +14,6 @@ plantController.getPlants = (req, res, next) => {
 }
 
 plantController.addPlant = (req, res, next) => {
-    console.log("sat")
-    console.log(req.body)
   const { nickname,
     water,
     adoptday,
@@ -33,14 +31,30 @@ plantController.addPlant = (req, res, next) => {
 }
 
 plantController.deletePlant = (req, res, next) => {
-  console.log("delete!")
-  console.log(req.body)
   const { nickname } = req.body;
 
   models.Plant.deleteOne({
     "nickname" : nickname
   })
   .then(() => {
+    return next();
+  })
+  .catch((err) => console.log("error at addPlant middleware:", err));
+}
+
+plantController.updatePlant = (req, res, next) => {
+  console.log("update!")
+  console.log(req.body)
+  const { body } = req;
+  const { prename } = body;
+  console.log(body)
+
+  models.Plant.findOneAndUpdate(
+    { "nickname":  prename },
+    body
+  )
+  .then((data) => {
+    res.locals.plant = data;
     return next();
   })
   .catch((err) => console.log("error at addPlant middleware:", err));

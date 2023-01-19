@@ -1,54 +1,56 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 
 export default function UpdateForm(props) {
     const { plantInfo } = props;
-    //insert current info as mutatable values in the form
-    //user will be able to update info
-    //if user selects finish button:
-        // 1. Update fetch request is sent
-        // 2. modal is closed
-        // 3. Main page is updated
-        /*
-        db.collection.findAndModify({
-            query: { nickname },
-            update: { updatedPlantObj}, // Changed in MongoDB 4.2
-            new: true,
-        });
-        */
+    const setPlants = props.setPlants;
+    const plants = props.plants;
+    const closeModal = props.closeModal;
+    const [ updatePlant, setUpdatePlant ] = useState({
+        prename: plantInfo.nickname,
+        nickname: plantInfo.nickname,
+        water: plantInfo.water,
+        adoptday: plantInfo.adoptday,
+        type: plantInfo.type
+    });
+
+        const handleChange = (event) => {
+            const { name, value } = event.target;
+            setUpdatePlant((prevState) => ({
+                ...prevState,
+                [name]: value
+            }));
+        }
         
         const onSubmit = (event) => {
             event.preventDefault();
             
-            const emptyInput = Object.values(newPlant).indexOf('');
+            const emptyInput = Object.values(updatePlant).indexOf('');
             console.log(emptyInput)
+
             //check to make sure all inputs have been filled
-            if(emptyInput === -1) {
                 fetch('/plant', {
-                method: 'post',
+                method: 'put',
                 headers: {'Content-Type':'application/json'},
-                body: JSON.stringify({
-                    nickname: newPlant.nickname,
-                    water: newPlant.water,
-                    adoptday: newPlant.adoptday,
-                    type: newPlant.type            
-                    })
+                body: JSON.stringify(updatePlant)
+                })
+                .then((data) => data.json())
+                .then(updated => {
+                    const updatedState = plants.filter(plant => plant.nickname !== updatePlant.prename);
+                    //find current plant object and remove from state
+                    //add updated plant object to state
+                    //rerender the GardenContainer component with new plant added
+                    setPlants([
+                    ...updatedState,
+                    updatePlant
+                    ])
                 })
                 .catch(err => { 
-                    console.log("YOUR POST WAS NOT SUCCESSFUL", err);
+                    console.log("YOUR UPDATE WAS NOT SUCCESSFUL", err);
                 })
-                //rerender the GardenContainer component with new plant added
-                props.setPlants([
-                    ...props.plants,
-                    newPlant
-                ])
-                //close the NewPlantModal after successful POST request
-                props.setShowModal();
-            } else {
-                window.alert("Please fill in every box.")
-            }
-
+                //close the UpdatePlanttModal after successful UPDATE request
+                closeModal();
         }
 
     
@@ -58,7 +60,7 @@ export default function UpdateForm(props) {
             <form 
               action="" 
               className='modal--container'
-            //   onSubmit={ onSubmit }
+              onSubmit={ onSubmit }
             >
                 <div className='plantCard--header'>
                     <div className='nickname-water--input'>
@@ -66,19 +68,17 @@ export default function UpdateForm(props) {
                             Nickname:
                             <input 
                             type='text'
-                            placeholder='Prickly Pete' 
                             name='nickname'
-                            // value={plantInfo.nickname}
                             defaultValue={plantInfo.nickname}
-                            // onChange={handleChange}
+                            onChange={handleChange}
                             />
                         </label>
                         <label> 
                             How much water does it drink?
                             <select 
                             name="water" 
-                            // value={newPlant.water}
-                            // onChange={handleChange}
+                            defaultValue={plantInfo.water}
+                            onChange={handleChange}
                             id="water-values"
                             >
                                 <option value="dry">
@@ -97,8 +97,8 @@ export default function UpdateForm(props) {
                             <input 
                             type="date"  
                             name="adoptday" 
-                            // value={newPlant.adoptday}
-                            // onChange={handleChange}
+                            defaultValue={plantInfo.adoptday}
+                            onChange={handleChange}
                             />
                         </label>
                     </div>
@@ -112,8 +112,8 @@ export default function UpdateForm(props) {
                         type="text" 
                         placeholder='cactus' 
                         name='type'
-                        // value={newPlant.type}
-                        // onChange={handleChange}
+                        defaultValue={plantInfo.type}
+                        onChange={handleChange}
                         />
                     </label>
                     
