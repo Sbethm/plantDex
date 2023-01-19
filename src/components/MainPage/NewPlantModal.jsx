@@ -47,11 +47,7 @@ export default function NewPlant(props) {
             props.setShowModal();
         } else {
             window.alert("Please fill in every box.")
-        }
-
-        
-
-        
+        }        
     }
 
     return (
@@ -115,7 +111,7 @@ export default function NewPlant(props) {
                     </label>
                     
                 </div>
-                <input type="submit" value="Submit" />
+                <input className='primary--btn submit' type="submit" value="Submit" />
             </form>
         </div>
     )
