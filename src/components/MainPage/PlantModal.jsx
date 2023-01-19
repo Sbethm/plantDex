@@ -25,6 +25,7 @@ export default function PlantModal(props) {
                 update={ updateModal } 
                 setPlants={ setPlants }
                 plants={ plants } 
+                closeModal={ closeModal }
             /> : <PlantDetails 
                 plantInfo={ plantInfo } 
                 update={ updateModal } 
